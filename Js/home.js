@@ -9,7 +9,7 @@ function add(){
 
   if (title.value == "" || details.value == "") {
       
-    return alert("Please add Note Title and Details");
+    return alert("Please add Note title and details");
   
   }
 
