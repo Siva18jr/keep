@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;700&family=Secular+One&display=swap');
+
+:root{
+    --header-font-family: 'Rowdies', cursive;
+    --htitle-font-family: 'Secular One', sans-serif;
+    --ntitle-font-family: 'Rowdies', cursive;
+}
+
+body{
+    margin-left: 13%;
+    margin-right: 13%;
+    margin-top: 3%;
+}
+
+.nav_head{
+    margin-bottom: 8%;
+    font-family: var(--header-font-family);
+}
+
+.no_notes{
+    display: none;
+    margin-bottom: 30%;
+    padding-top: 3%;
+}
+
+/* .view_notes{
+    display: none;
+} */
+
+.no_notes_img{
+    display: block;
+}
+
+.hthree__title{
+    font-family: var(--htitle-font-family);
+}
+
+.nthree__title{
+    margin-top: 3%;
+    margin-bottom: 1%;
+    font-family: var(--ntitle-font-family);
+    font-weight: 300;
+    text-align: center;
+}
+
+.action_btn{
+    font-family: var(--ntitle-font-family);
+    font-weight: 300;
+}
+
+.notes_title{
+    font-family: var(--htitle-font-family);
+}
+
+.add_note{
+    margin-top: 8%;
+}
+
+.nthree_add{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-family: var(--ntitle-font-family);
+    font-weight: 400;
+    text-align: center;
+}
