@@ -1,7 +1,6 @@
 var title = document.getElementById("addn_title");
 var details = document.getElementById("add_detail");
 var addnote = document.getElementById("add_note");
-let noview = document.getElementById("no_notes");
 
 function add(){
   
@@ -42,6 +41,8 @@ function add(){
 function showNotes(){
   
   let notes = localStorage.getItem("notes");
+  let view = document.getElementById("view_notes");
+  let noview = document.getElementById("no_notes");
 
   if(notes == null){
       
@@ -82,8 +83,6 @@ function showNotes(){
     </div>` ;
     
   });
-
-  let view = document.getElementById("view_notes");
 
   if(notesobj.length != 0){
       
@@ -135,6 +134,8 @@ function deleteNote(index) {
 function editNote(index) {
   
   let notes = localStorage.getItem("notes");
+  let noimg = document.getElementById('no_notes_img');
+  let notext = document.getElementById("noText");
   
   if (title.value !== "" || details.value !== "") {
     
@@ -153,8 +154,6 @@ function editNote(index) {
   }
 
   notesObj.findIndex((element) => {
-
-    noview.style.display = 'none';
     
     title.value = notesObj[index].title;
     details.value = notesObj[index].text;
