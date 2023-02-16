@@ -137,6 +137,9 @@ function editNote(index) {
   let noimg = document.getElementById('no_notes_img');
   let notext = document.getElementById("noText");
   
+  noimg.style.display = 'none';
+  notext.style.display = 'none';
+  
   if (title.value !== "" || details.value !== "") {
     
     return alert("Please clear the form before editing a note");
