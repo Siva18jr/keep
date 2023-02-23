@@ -54,7 +54,7 @@ function showNotes(){
 
   }
 
-  let html = "";
+  let html = `<p>Total notes : <b> ${notesobj.length} </b> </p>`;
 
   notesobj.forEach(function(element, index){
     
