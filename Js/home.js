@@ -229,3 +229,21 @@ function search(){
   search.value = '';
   
 }
+
+let exJson = localStorage.getItem('notes');
+
+function download(content, fileName, ContentType) {
+
+  const a = document.createElement("a");
+  const file = new Blob([content], { type: ContentType });
+  a.href = URL.createObjectURL(file);
+  a.download = fileName;
+  a.click();
+
+}
+
+function backup() {
+
+  download(JSON.stringify(exJson), "notes-data.json", "text/json");
+
+}
