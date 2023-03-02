@@ -64,3 +64,8 @@ body{
     font-weight: 400;
     text-align: center;
 }
+
+.cloud {
+    float: right;
+    margin-bottom: 3%;
+}
