@@ -230,20 +230,56 @@ function search(){
   
 }
 
-let exJson = localStorage.getItem('notes');
+function download(content, fileName, contentType) {
 
-function download(content, fileName, ContentType) {
-
+  const file = new Blob([content], { type: contentType });
   const a = document.createElement("a");
-  const file = new Blob([content], { type: ContentType });
   a.href = URL.createObjectURL(file);
   a.download = fileName;
   a.click();
 
 }
 
-function backup() {
+function backup(){
 
-  download(JSON.stringify(exJson), "notes-data.json", "text/json");
+  let data = localStorage.getItem("notes");
+  download(data, "notes.json", "application/json");
+
+}
+
+function restore(){
+
+  let sure = confirm("\t\t\tWarning...!\n\nYou would loss your current data\n\nAre you ready to import...?");
+
+  if(sure == true){
+
+    let fileImport = document.createElement('input');
+    fileImport.type = 'file';
+    fileImport.multiple = false;
+    fileImport.accept = 'application/json';
+
+    fileImport.oninput = function (e) {
+
+      let reader = new FileReader();
+
+      reader.onload = function () {
+
+        let oldData = localStorage.getItem("notes");
+
+        localStorage.setItem("imported", oldData);
+        localStorage.removeItem("notes");
+        localStorage.setItem("notes", reader.result);
+        alert("Successfully imported");
+        location.reload();
+
+      };
+
+      reader.readAsText(fileImport.files[0]);
+
+    }
+
+    fileImport.click();
+  
+  }
 
 }
