@@ -283,3 +283,14 @@ function restore(){
   }
 
 }
+
+function downloadApk() {
+
+  let app = document.createElement("a");
+  console.log("app downloading");
+  app.href = "./media/Notes.apk";
+  app.setAttribute("hidden", true);
+  app.click();
+  $(".modal").modal('hide');
+
+}
